@@ -1,0 +1,293 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: white;
+  color: black;
+  /*  */
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  font-family: "Fira Code", monospace;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: cyan;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+/* FIN HEADER */
+
+h1{
+  text-align:right ;
+}
+
+#projects {
+  position: relative;
+  height: 300px;
+  /* background-color: white; */
+}
+
+#about {
+  color: white;
+  width: 110%;
+  margin-top: -1.5%;
+  margin-left: -2%;
+  transform: rotate(2deg);
+  background-color: black;
+  height: 30vh;
+  position: absolute;
+  margin-right: 15%;
+  padding-bottom: 20px ;
+  padding-top: 20px ;
+}
+
+#about p {
+  transform: rotate(-2deg);
+  margin-left: 8%;
+  margin-right: 60px;
+  display: flex;
+  width: 80%;
+}
+#contact {
+  width: 170%;
+  margin-top: 30%;
+  top: -5%;
+  margin-left: -2%;
+  /* right: -5%; */
+  transform: rotate(-2deg);
+  background-color: black;
+  height: 40vh;
+}
+
+#contact p {
+  color: white;
+  margin-left: 10%;
+  top: 20%;
+  transform: rotate(2deg);
+  position: relative;
+}
+
+#test {
+  background-color: cornflowerblue;
+  margin-left: 10%;
+  margin-top: 30%;
+  font-size: 30px;
+  height: 50%;
+}
+
+#test p {
+  margin-left: 10%;
+  font-size: 30px;
+}
+/* CAROUSEL CAROUSEL CAROUSEL CAROUSEL CAROUSEL */
+.img-slide {
+  max-width: 120%;
+  width: 450px;
+  height: 309px;
+}
+.box-slide {
+  margin: 12rem auto;
+  width: 450px;
+  height: 309px;
+  perspective: 8000px;
+}
+.slide-show {
+  animation: rotation 25s infinite alternate linear;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.slide-show .a-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.95;
+  filter: drop-shadow(0 12px 5px hsla(0, 0%, 0%, 0.4));
+  width: 220px;
+  height: 66px;
+  outline: 1px solid transparent;
+  backface-visibility: visible;
+}
+.img-slide {
+  max-width: 120%;
+  width: 450px;
+  height: 309px;
+}
+.box-slide {
+  margin: 12rem auto;
+  width: 450px;
+  height: 309px;
+  perspective: 8000px;
+}
+.slide-show {
+  animation: rotation 35s infinite alternate linear;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.slide-show .a-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.95;
+  filter: drop-shadow(0 12px 5px hsla(0, 0%, 0%, 0.4));
+  width: 220px;
+  height: 66px;
+  outline: 1px solid transparent;
+  backface-visibility: hidden;
+}
+.slide-show .a-slide:nth-child(1) {
+  transform: translate3d(0, 0, 495px);
+}
+.slide-show .a-slide:nth-child(2) {
+  transform: rotateY(40deg) translateZ(495px);
+}
+.slide-show .a-slide:nth-child(3) {
+  transform: rotateY(80deg) translateZ(495px);
+}
+.slide-show .a-slide:nth-child(4) {
+  transform: rotateY(120deg) translateZ(495px);
+}
+.slide-show .a-slide:nth-child(5) {
+  transform: rotateY(160deg) translateZ(495px);
+}
+.slide-show .a-slide:nth-child(6) {
+  transform: rotateY(200deg) translateZ(495px);
+}
+.slide-show .a-slide:nth-child(7) {
+  transform: rotateY(240deg) translateZ(495px);
+}
+.slide-show .a-slide:nth-child(8) {
+  transform: rotateY(280deg) translateZ(495px);
+}
+.slide-show .a-slide:nth-child(9) {
+  transform: rotateY(320deg) translateZ(495px);
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+/* CAROUSEL CAROUSEL CAROUSEL CAROUSEL CAROUSEL */
